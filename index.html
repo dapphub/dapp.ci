@@ -1,17 +1,58 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
     <title>dapp.ci</title>
-    <style type="text/css" media="screen">
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="cfa.js" type="text/javascript"></script>
+    <link href="dappci.css" rel="stylesheet" type="text/css"></link>
   </head>
   <body>
-    <img src="dappci.png" alt=""/>
+    <h1>dapp.ci</h1>
+    <canvas id="canvas" width='600' height='600' ></canvas>
+    <h2>soon™</h2>
+
+	<textarea class="code" id="cfa_script">
+startshape SS
+
+rule C {
+ A[]
+ B[]
+ B[r 60]
+ B[r 120]
+ B[r 180]
+ B[r 240]
+ B[r 300]
+
+}
+
+rule B {
+ A[s 0.3333 y 1]
+ C[s 0.333 y 1]
+}
+
+rule A {
+ SS[b 1 sat 0]
+}
+
+rule SS {
+ TRIANGLE[]
+ TRIANGLE[flip 0]
+ SS[ b 1 s 0.9 r -7 hue 2]
+}
+
+rule SS {
+ TRIANGLE[]
+ TRIANGLE[flip 0]
+ SS[ b -1 s 0.9 r 7 hue 2]
+}
+  </textarea>
+
+
+  <script>
+    var h = 0.5 / (Math.cos(Math.PI/6.0));
+    var cfa = CFA.parse('cfa_script');
+    halt_fn = CFA.exec(cfa, [-h, -h, h, h], 'canvas');
+  </script>
   </body>
 </html>

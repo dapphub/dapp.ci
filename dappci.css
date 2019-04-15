@@ -1,0 +1,21 @@
+body {
+  font-family: monospace;
+  padding: 2em 0;
+}
+#cfa_script {
+  display: none;
+}
+h1,h2,canvas {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+h1,h2 {
+  padding: 1em;
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 3em;
+}
